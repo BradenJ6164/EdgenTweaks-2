@@ -6,3 +6,5 @@ This repo is forked from https://gitlab.com/roglemorph/edgentweaks/-/blob/master
 Features Added In This Repo:
 Notifications when an assignment is ready.
 More Soon
+
+Too Install/Update, copy and paste script.js into a new or existing tampermonkey script.
