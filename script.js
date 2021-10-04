@@ -1,12 +1,14 @@
 // ==UserScript==
 // @name         EdgenTweaks
 // @namespace
-// @version      1.5.3
+// @version      1.5.4
 // @description  Adds tweaks to edgenuity
 // @author       GW
 // @match        *://*.core.learn.edgenuity.com/*
 // @grant        none
 // ==/UserScript==
+
+// CRITICAL UPDATE BRAINLY CHANGED DOMAIN TO .IN 
 
 //changes 3-13-21
 //vocab, search selection fix
@@ -313,7 +315,7 @@ setTimeout( //2 sec delay to load before trying to run
             if (result != "") {
                 $("#userconsole").prepend("<li>Searching your selection ");
                 if ($("#googlesearch").is(":checked")) window.openedWindows[0] = window.open("https://www.google.com/search?q=" + result);
-                if ($("#brainlysearch").is(":checked")) window.openedWindows[1] = window.open("https://brainly.com/app/ask?q=" + result);
+                if ($("#brainlysearch").is(":checked")) window.openedWindows[1] = window.open("https://brainly.in/app/ask?q=" + result);
                 if ($("#wolframsearch").is(":checked")) window.openedWindows[2] = window.open("https://www.wolframalpha.com/input/?i=" + result);
                 if ($("#customsearch").is(":checked")) window.openedWindows[3] = window.open("https://google.com/search?q=site:" + $("#css").val() + " " + result, )
                 localStorage.setItem("csskey", $("#css").val())
@@ -530,7 +532,7 @@ function notifyPendingAction() {
                // create and show the notification
                const showNotification = () => {
                    // create a new notification
-                
+
                    const notification = new Notification('Edgenuity Gay', {
                        body: 'Edgenuity needs your attention to continue.',
                        icon: './img/js.png'
@@ -552,7 +554,7 @@ function notifyPendingAction() {
                // show an error message
                const showError = () => {
                     alert("Notifications are blocked. Enable them or disable notifications in Edgenuity Tweak settings.");
-                   
+
                }
 
                // check notification permission
@@ -633,4 +635,3 @@ function loop() {
 if ($("#Notifications").is(":checked")) notifyPendingAction()
 window.masterloop = setInterval(loop, 2000);
 }, 2000); //makes this run after 2 seconds
-
